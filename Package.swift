@@ -6,7 +6,9 @@ import PackageDescription
 let package = Package(
     name: "HapticEngine",
     platforms: [
-        .iOS(.v13)
+        .iOS(.v13),
+        .macOS(.v10_14),
+        .tvOS(.v14)
     ],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
