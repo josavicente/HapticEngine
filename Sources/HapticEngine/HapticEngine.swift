@@ -4,6 +4,8 @@
 //  Created by Josafat Vicente Pérez on 16/09/2020.
 #if canImport(Combine)
 #if canImport(CoreHaptics)
+#if canImport(SwiftUI)
+
 import Combine
 import CoreHaptics
 import SwiftUI
@@ -191,4 +193,4 @@ public final class HapticEngine  : ObservableObject {
 
 #endif
 #endif
-
+#endif
