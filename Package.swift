@@ -15,9 +15,6 @@ let package = Package(
         .library(
             name: "HapticEngine",
             targets: ["HapticEngine"]),
-        .library(
-            name: "HapticEngineModel",
-            targets: ["HapticEngineModel"])
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
