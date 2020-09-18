@@ -36,6 +36,8 @@ struct ExampleApp: App {
     }
 }
 
+import HapticEngine
+
 struct SomeView: View {
     
   

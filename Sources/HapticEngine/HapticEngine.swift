@@ -23,7 +23,7 @@ public final class HapticEngine  : ObservableObject {
         try? prepareHaptics()
     }
     
-    public func start() throws {
+    private func start() throws {
         try engine?.start()
         toRestart = false
     }
@@ -35,7 +35,7 @@ public final class HapticEngine  : ObservableObject {
             toRestart = true
         }
     }
-    func prepareHaptics() throws {
+    private func prepareHaptics() throws {
         guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else { return }
         
         do {
@@ -51,12 +51,12 @@ public final class HapticEngine  : ObservableObject {
     }
     
     // Simple feedback
-    func simpleSuccess() {
+    public func simpleSuccess() {
         let generator = UINotificationFeedbackGenerator()
         generator.notificationOccurred(.success)
     }
     
-    func ascendingSuccess() {
+    public func ascendingSuccess() {
         // make sure that the device supports haptics
         guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else { return }
         var events = [CHHapticEvent]()
@@ -77,7 +77,7 @@ public final class HapticEngine  : ObservableObject {
             print("Failed to play pattern: \(error.localizedDescription).")
         }
     }
-    func descendingSucces(){
+    public func descendingSucces(){
         // make sure that the device supports haptics
         guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else { return }
         var events = [CHHapticEvent]()
@@ -98,7 +98,7 @@ public final class HapticEngine  : ObservableObject {
             print("Failed to play pattern: \(error.localizedDescription).")
         }
     }
-    func complexSuccess() {
+    public func complexSuccess() {
         // make sure that the device supports haptics
         guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else { return }
         var events = [CHHapticEvent]()
@@ -144,7 +144,7 @@ public final class HapticEngine  : ObservableObject {
         try player?.start(atTime: CHHapticTimeImmediate)
     }
     
-    func getRelativeTime(touches: [HapticEvent], index: Int) -> Float {
+    private func getRelativeTime(touches: [HapticEvent], index: Int) -> Float {
         var relativeTime : Float = 0.0
         for i in 1..<index {
             relativeTime += (touches[i].tap.value + touches[i].duration)
@@ -152,7 +152,7 @@ public final class HapticEngine  : ObservableObject {
         return relativeTime
     }
     
-    func customHapticGenerator(touches: [HapticEvent]) -> [CHHapticEvent]{
+    public func customHapticGenerator(touches: [HapticEvent]) -> [CHHapticEvent]{
         
         
         var events : [CHHapticEvent] = []
@@ -176,7 +176,7 @@ public final class HapticEngine  : ObservableObject {
         
     }
     
-    func customSuccess(events: [CHHapticEvent]){
+    public func customSuccess(events: [CHHapticEvent]){
         
         guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else { return }
         

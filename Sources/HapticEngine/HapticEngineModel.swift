@@ -8,7 +8,7 @@
 import Foundation
 import CoreHaptics
 
-struct HapticEvent {
+public struct HapticEvent {
     var tap : Vibration
     var type: CHHapticEvent.EventType
     var duration: Float
