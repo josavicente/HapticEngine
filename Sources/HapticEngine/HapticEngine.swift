@@ -7,7 +7,7 @@ import Foundation
 import CoreHaptics
 import SwiftUI
 
-class HapticsEngine  : ObservableObject {
+class HapticEngine  : ObservableObject {
     
     private var engine: CHHapticEngine?
     private var toRestart = false
