@@ -26,7 +26,7 @@ import HapticEngine
 struct ExampleApp: App {
     
 
-    let haptics = HapticsEngine()
+    let haptics = HapticEngine()
     
     var body: some Scene {
         WindowGroup {
@@ -39,7 +39,7 @@ struct ExampleApp: App {
 struct SomeView: View {
     
   
-    @EnvironmentObject private var haptics: HapticsEngine
+    @EnvironmentObject private var haptics: HapticEngine
     .
     .
     .
