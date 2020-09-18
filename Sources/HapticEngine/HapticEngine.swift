@@ -2,12 +2,13 @@
 //  HapticEngine.swift
 
 //  Created by Josafat Vicente Pérez on 16/09/2020.
-
-import Foundation
+#if canImport(Combine)
+#if canImport(CoreHaptics)
+import Combine
 import CoreHaptics
 import SwiftUI
 
-class HapticEngine  : ObservableObject {
+public final class HapticEngine  : ObservableObject {
     
     private var engine: CHHapticEngine?
     private var toRestart = false
@@ -187,4 +188,7 @@ class HapticEngine  : ObservableObject {
     }
     
 }
+
+#endif
+#endif
 
